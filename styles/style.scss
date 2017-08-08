@@ -1,0 +1,35 @@
+body {
+  background-image: url("../img/background.jpg");
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  width: 2em;
+  height: 2em;
+  font-size: 20px;
+  border: 0.5px solid rgb(81, 82, 84);
+  background: rgb(214, 150, 6);
+  color: white;
+  // text-transform: lowercase;
+}
+
+#calc-body {
+  position: absolute;
+  top:40%;
+  left: 40%;
+
+  border: 2px solid red;
+  #display {
+    height: 4em;
+    border: none;
+    background: black;
+    color: white;
+  }
+
+  #operations {
+
+    button {
+    }
+  }
+}

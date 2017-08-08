@@ -1,17 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="style.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <title>Calculator</title>
-  </head>
-  <body>
 
-    <div id="calc-body" ng-app="calculator" ng-controller="myCtrl">
-      <!-- <p>Name : <input type="text" ng-model="name"></p> -->
-      <h1>{{hello}}</h1>
-    </div>
- <script type="text/javascript" src="calculator.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles/style.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <title>Calculator</title>
+</head>
+
+<body>
+
+  <div id="calc-body" ng-app="calculator" ng-controller="myCtrl">
+    <!-- <p>Name : <input type="text" ng-model="name"></p> -->
+    <h1>{{hello}}</h1>
+    <textarea id="display" readonly="true" ng-model="displayValue"></textarea>
+    <section id="operations">
+      <button>mc</button>
+      <button>m+</button>
+      <button>m-</button>
+      <button>mr</button>
+      <button>C</button>
+      <button>%</button>
+      <button>x2</button>
+      <button>/</button>
+      <button>x</button>
+      <button>-</button>
+      <button>+</button>
+      <button>=</button>
+      <button>.</button>
+    </section>
+    <section id="num-pad">
+      <button>9</button>
+      <button>8</button>
+      <button>7</button>
+      <button>6</button>
+      <button>5</button>
+      <button>4</button>
+      <button>3</button>
+      <button>2</button>
+      <button>1</button>
+      <button>0</button>
+    </section>
+  </div>
+  <script type="text/javascript" src="js/calculator.js"></script>
+</body>
+
 </html>

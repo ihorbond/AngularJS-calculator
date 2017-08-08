@@ -1,0 +1,1 @@
+body{background-image:url("../img/background.jpg")}button{margin:0;padding:0;width:2em;height:2em;font-size:20px;border:0.5px solid #515254;background:#d69606;color:white}#calc-body{position:absolute;top:40%;left:40%;border:2px solid red}#calc-body #display{height:4em;border:none;background:black;color:white}
