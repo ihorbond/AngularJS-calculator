@@ -5,17 +5,37 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="styles/style.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.min.js"></script>
   <title>Calculator</title>
 </head>
 
 <body>
 
-  <div id="calc-body" ng-app="calculator" ng-controller="myCtrl">
-    <!-- <p>Name : <input type="text" ng-model="name"></p> -->
-    <h1>{{hello}}</h1>
-    <textarea id="display" readonly="true" ng-model="displayValue"></textarea>
+  <div id="calc-body" ng-app="calculator" ng-controller="calcCtrl as controller">
+     <p id="message">{{ctrl.message}}</p>
+    <div id="display" ng-bind="displayValue"></div>
+
+    <section id="num-pad">
+      <button ng-repeat="oneNum in ctrl.numpad" ng-click="num(oneNum)" id="num{{oneNum}}">
+        {{oneNum}}
+      </button>
+      <!-- <button>9</button>
+      <button>8</button>
+      <button>7</button>
+      <button>6</button>
+      <button>5</button>
+      <button>4</button>
+      <button>3</button>
+      <button>2</button> -->
+      <!-- <button>1</button> -->
+      <!-- <button id="zero">0</button> -->
+    </section>
+
     <section id="operations">
-      <button>mc</button>
+      <button ng-repeat="oneOperation in ctrl.operations" ng-click="operation(oneOperation)" id="operation{{oneOperation}}">
+        {{oneOperation}}
+      </button>
+      <!-- <button>mc</button>
       <button>m+</button>
       <button>m-</button>
       <button>mr</button>
@@ -24,23 +44,12 @@
       <button>x2</button>
       <button>/</button>
       <button>x</button>
-      <button>-</button>
-      <button>+</button>
-      <button>=</button>
-      <button>.</button>
+      <button ng-clicl="substract()">-</button>
+      <button ng-click="add()">+</button>
+      <button ng-click="equals()">=</button>
+      <button ng-click="decimal()">.</button> -->
     </section>
-    <section id="num-pad">
-      <button>9</button>
-      <button>8</button>
-      <button>7</button>
-      <button>6</button>
-      <button>5</button>
-      <button>4</button>
-      <button>3</button>
-      <button>2</button>
-      <button>1</button>
-      <button>0</button>
-    </section>
+
   </div>
   <script type="text/javascript" src="js/calculator.js"></script>
 </body>
