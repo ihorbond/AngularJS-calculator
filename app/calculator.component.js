@@ -77,6 +77,7 @@ angular.module("calculator")
                url: 'http://localhost:3000/memory'
              }).then(res => {
                scope.displayValue = res.data;
+              //  console.log(typeof res.data);
              }, res => {
                scope.message = res.data;
                });
