@@ -24,7 +24,6 @@ angular.module("calculator")
 
            const scope = this;
            scope.displayValue = "0";
-           scope.equation = "";
            scope.message = "Hello World";
            scope.numpad = [7, 8, 9, 4, 5, 6, 1, 2, 3, 0, '.'];
            scope.operations = ['mr', 'x', '÷', 'mc', '-', '+', 'm+',  '%', '=', 'm-', 'AC'];
@@ -49,8 +48,7 @@ angular.module("calculator")
                if (value === "=") {
                  scope.displayValue = scope.displayValue.replace(/x/g, "*").replace(/÷/g, "/");
                  scope.displayValue = eval(scope.displayValue).toString();
-               }
-               else {
+               } else {
                scope.displayValue += value;
              }
              }
@@ -60,12 +58,13 @@ angular.module("calculator")
              switch (value) {
 
                case "mc":
+               document.getElementById("operationmr").className = "";
                $http({
                method: 'DELETE',
                url: 'http://localhost:3000/mc'
              }).then(res => {
                scope.message = res.data;
-
+               scope.displayValue = "0";
              }, res => {
                scope.message = res.data;
                });
@@ -84,6 +83,7 @@ angular.module("calculator")
                break;
 
                case "m+":
+               document.getElementById("operationmr").className = "active";
                $http({
                method: 'POST',
                url: 'http://localhost:3000/mplus',
@@ -97,6 +97,7 @@ angular.module("calculator")
                break;
 
                case "m-":
+               document.getElementById("operationmr").className = "active";
                $http({
                method: 'PATCH',
                url: 'http://localhost:3000/mminus',
